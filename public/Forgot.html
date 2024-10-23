@@ -1,0 +1,198 @@
+<html>
+	<head>
+        <link rel="website icon" type="png" href="./images/logo.jpg">
+        <style>
+            html{
+                scroll-behavior: smooth; 
+                scrollbar-width: thin;
+            }
+            body{
+                margin: 0;
+                padding: 0;
+                font-family: montserrat;
+                width: 100px;
+                height: 100vh;
+                overflow: hidden;
+                background:url("./images/bglogin.jpg");
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-size: 100% 100%;
+                background-position: center;
+            }
+            .centre{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+                width: 350px;
+                background: white;
+                border-radius: 25px;
+            }
+            .centre form{
+                padding: 0 40px;
+                box-sizing: border-box;
+            }
+            .centre h1{
+                text-align: center;
+                padding: 0 0 20px 0;
+                border-bottom: 1px solid silver;
+            }
+            form .txt_field{
+                position: relative;
+                border-bottom: 2px solid #adadad;
+                margin: 30px 0;
+            }
+            .txt_field input{
+                width: 100%;
+                padding: 0 5px;
+                height: 40px;
+                font-size: 16px;
+                border: none;
+                background: none;
+                outline: none;
+            }
+            .txt_field label{
+                position: absolute;
+                top: 50%;
+                left: 5px;
+                color: #adadad;
+                transform: translateY(-50%);
+                font-size: 16px;
+                pointer-events: none;
+                transition: .5s;
+            }
+            .txt_field span::before{
+                content: '';
+                position: absolute;
+                top: 40%;
+                left: 0;
+                width: 0%;
+                height: 2px;
+                background: #2691d9;
+                transition: .5s;
+            }
+            .txt_field input:focus ~ label,
+            .txt_field input:valid ~ label{
+                top: -5px;
+                color: #2691d9;
+            }
+            .txt_field input:focus ~ span::before,
+            .txt_field input:valid ~ span::before{
+                width: 100%;
+            }
+            .login input{
+                text-align: center;
+                background: #2691d9;
+                padding: 15px 0;
+                border-radius: 25px;
+                font-size: 18px;
+                border: 1px solid;  
+                color: #e9f4fb;
+                font-weight: 700;
+                cursor: pointer;
+                width: 100%;   
+                outline: none;
+            }
+            .login input:hover{
+                border-color: #2691d9;
+                transition: .5s;
+            }
+            .signup_link{
+                margin: 30px 0;
+                text-align: center;
+                font-size: 16px;
+                color: #666666;
+            }
+            .signup_link a{
+                color: #2691d9;
+                text-decoration: none;
+            }
+            .signup_link a:hover{
+                text-decoration: underline;
+            }
+            .home{
+                align-items: center;
+                padding-bottom: 10px;
+            }
+            .home a{
+                text-decoration: none;
+                color: #fff;
+                border: 1px solid;
+                padding-top: 5px;
+                padding-bottom: 5px;
+                padding-left: 20px;
+                padding-right: 20px;
+                background: #2691d9;
+                border-radius: 25px;
+                font-size: 20px;
+                outline: none;
+            }
+            .home a:hover{
+                border-color: #2691d9;
+                transition: .5s;
+            }
+        </style>
+	</head>
+	<body>
+		<div class="centre">
+            <h1>Forgot Password</h1>
+            <form method="post" action="/forgotpass" id="forgotpass">
+                <div class="txt_field">
+                    <input type="text" name="uname" id="uname" required>
+                    <label>Username</label>
+                </div>
+                <div class="txt_field">
+                    <input type="password" name="upassword" id="upassword" required>
+                    <label>New Password</label>
+                </div>
+                <div class="txt_field">
+                    <input type="password" name="cpassword" id="cpassword" required>
+                    <label>Confirm Password</label>
+                </div>
+                <div class="login">
+                    <input type="submit" id="submit" value="Log In"> 
+                </div>
+                <div class="signup_link">Not a Member? <a href="signin.html">Signup</a></div>
+                <div class="home"><a href="index.html">Home</a></div>
+            </form>
+        </div>
+        <script src="/database.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const form = document.getElementById("forgotpass");
+
+            form.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            const uname = document.getElementById("uname").value;
+            const upassword = document.getElementById("upassword").value;
+            const cpassword = document.getElementById("cpassword").value;
+
+            if (upassword !== cpassword) {
+              alert("Passwords do not match. Please try again.");
+              return;
+            }
+
+        // Make a POST request to your server for form submission
+            fetch("http://localhost:6161/forgotpass", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({ uname, upassword }),
+            })
+              .then((response) => response.json())
+              .then((data) => {
+                if (data.success) {
+                  alert("Password Changed Successful!");
+                  form.reset(); // Reset the form after successful submission
+                } else {
+                  alert("Error: " + data.message);
+                }
+              })
+              .catch((error) => console.error("Error:", error));
+            });
+        });
+    </script>
+    </body>
+</html>
