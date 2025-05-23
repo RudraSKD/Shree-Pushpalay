@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <title>SHREE PUSHPALAY</title>
+    <head>
+        <meta charset="utf-8">
+        <script src="angular.min.js"></script>
+        <link rel="stylesheet" href="../public/css/Font Awesome/all.css">
+        <link rel="icon" type="image/png" href="./images/logo.jpg">
+        <link rel="stylesheet" href="css/index.css">
+        <script src="../database.js"></script>
+    </head>
+    <body>
+        <header id="home">
+            <div class="main">
+                <div class="logo">
+                    <img src="./images/logo.jpg">
+                    <a href="#"><b>Shree Pushpalay</b></a>
+                </div>
+                <ul>
+                    <li class="active"><a href="#home">Home</a></li>
+                    <li><a href="#info">About US</a></li>
+                    <li><a href="cart.html">Cart</a></li>
+                </ul>
+                <div class="login"  id="Name"><a href="login.html">Register/Login</a></div>
+                <div class="uname" id="uname">
+                    <div class="userName" id="userName" onclick="togglemenu()">Guest</div>
+                </div>
+                <div class="submenu1" id="show">
+                    <div class="submenu">
+                        <div class="userout">
+                            <h3>Log out</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="title">
+                <h1>Embrace divine blessings and elevate your festivities with</h1>
+                <h2>our exquisite blooms, perfect for honoring the gods</h2>
+                <h3>you worship and celebrating cherished festivals.</h3>
+            </div>
+            <div class="nav_to">
+                <div class="FM"><a href="FM.html"> Flower Market </a></div>
+                <div class="ED"><a href="ED.html">Event Decoratives</a></div>
+            </div>
+        </header>
+        <div class="Footer">
+                <div class="f2" name="About" id="info">
+                    <form>
+                        <b>INFO</b>
+                    <div class="f.2">
+                            <p><i class="fa-regular fa-envelope" style="color: #fff;"></i>Email: rudradhamdhere06@gmail.com</p><br>
+                            <p><i class="fa-solid fa-phone" style="color: #ffffff;"></i>Phone: +91 9921514944 / 7620159431</p><br>
+                            <p><i class="fa-solid fa-location-dot" style="color: #ffffff;"></i>Address: Gat No.350, Muktangan, Theur road, Kesnand, Pune-412207</p><br>
+                            <p><i class="fa-solid fa-clock" style="color: #ffffff;"></i>Shop Timings: 8:00 am to 7:00 pm </p>
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+            <div class="f3">
+                <div class="f3-2">
+                    <img src="./images/logo.jpg">
+                    <p>© 2024, SHREE PUSHPALAY, Powered by Rudra S. Dhamdhere</p>
+                </div>
+            </div>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const params = new URLSearchParams(window.location.search);
+                const userName = params.get("userName");
+                
+                if (userName) {
+                  const userNameElement = document.getElementById("userName");
+                  document.getElementById('uname').style.display = 'block';
+                  document.getElementById('Name').style.display = 'none';
+                  userNameElement.innerText = `${userName}`;
+                }
+            });
+        </script>
+        <script>
+            let show = document.getElementById("show");
+            function togglemenu(){
+                show.classList.toggle("openit");
+            }
+            show.addEventListener("click", function() {
+                document.getElementById('uname').style.display = 'none';
+                document.getElementById('show').style.display = 'none';
+                document.getElementById('Name').style.display = 'block';
+            });
+        </script>
+    </body>
+</html>

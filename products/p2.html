@@ -1,0 +1,338 @@
+<html>
+    <head>
+        <link rel="website icon" type="png" href="../images/logo.jpg">
+        <title>Ashtar</title>
+        <style>
+*{
+    margin: 0;
+    padding: 0;
+    font-family: century gothic;
+}
+body{
+    height: 100vh;
+}
+.m1{
+    background: rgb(255, 174, 0);
+    border-bottom:  2px solid #000;
+}
+.main{
+    max-width: 1200px;
+    margin: auto;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    padding-bottom: 30px;
+}
+.logo img{
+    float: left;
+    width: 70px;
+    height: auto;
+}
+.logo{
+    margin-top: 20px;
+}
+.logo a{
+    font-size: 30px;
+    text-decoration: none;
+    text-transform: uppercase;
+    height: auto;
+    color: #000;
+}
+ul{
+    list-style-type: none;
+    margin-top: 25px;
+}
+ul li{
+    display: inline-block;
+}
+ul li a{
+    text-decoration: none;
+    color: #000;
+    padding: 10px 20px;
+    font-size: 20px;
+    position: relative;
+}
+ul li a:before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    border-bottom: 2px solid indianred;
+    transition: 0.6s ease;
+}
+ul li a:hover::before{
+    width: 100%;
+}
+.login{
+    margin-top: 25px;
+}
+.login a{
+    text-decoration: none;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 20px;
+    border: 1px solid transparent;
+    background: indianred;
+    border-radius: 10px;
+    font-family: sans-serif;
+    transition: 0.4s;
+}
+.login a:hover{
+    background: transparent;
+    border: 1px solid indianred;
+}
+.p1-1{
+    margin: 20px;
+    border: 2px solid silver;
+    border-radius: 25px;
+}
+.product{
+    padding: 25px 35px;
+    display: flex;
+}
+.product img{
+    height: 350px;
+    padding-right: 25px;
+}
+.p1-1-1-2{
+    font-size: 40px;
+}
+.p1-1-1-2 p{
+    padding-top: 20px;
+}
+.P1-1-1-3{
+    padding-left: 140px;
+    padding-top: 320px;
+}
+button{
+    background: indianred;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 20px;
+    margin-right: 30px;
+    margin-left: 250px;
+    font-size: 20px;
+    width: 200px;
+    height: 50px;
+    transition: 0.4s;margin-top: 50px;
+}
+button:hover{
+    background: transparent;
+    border: 1px solid indianred;
+    color: #000;
+}
+.buy{
+    margin: 0;
+    padding: 20px;
+    padding-top: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+.buy1{
+    padding: 20px;
+    border: 2px solid rgb(192,192,192);
+    border-radius: 20px;
+}
+.buy2{
+    padding: 20px;
+    border: 2px solid rgb(192,192,192);
+    border-radius: 20px;
+    width: 300px;
+}
+.a b{
+    font-size: xx-large;
+    color: rgb(248, 182, 13);
+}
+.b{
+    padding: 20px;
+}
+.b span{
+    display: flex;
+    padding-right: 350px;
+}
+span h1{
+    font-size: large;
+}
+span h2{
+    font-size: large;
+    padding-left: 30px;
+}
+.c{
+    padding: 20px;
+    display: flex;
+}
+.c select{
+    margin-left: 50px;
+    padding: 0 10px;
+    border: none;
+    background-color: rgb(222, 218, 218);
+    border-radius: 10px;
+}
+.d{
+    padding: 20px;
+    display: flex;
+}
+.d h1{
+    font-size: 20px;
+}
+.d textarea{
+    border: none;
+    background-color: rgb(222, 218, 218);
+    border-radius: 20px;
+    width: 300px;
+    padding: 20px;
+    margin-left: 33px;
+}
+.e{
+    display: flex;
+}
+.e h1{
+    padding: 20px;
+    display: flex;
+    font-size: 20px;
+}
+.e h1 input{
+    border: none;
+    background-color: rgb(222, 218, 218);
+    border-radius: 20px;
+    font-size: 20px;
+    padding-left: 20px;
+    width: 300px;
+    height: 50px;
+    margin-left: 20px;
+}
+input[type="submit"]{
+    background: indianred;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 20px;
+    margin-right: 30px;
+    margin-left: 380px;
+    font-size: 20px;
+    width: 200px;
+    height: 50px;
+    transition: 0.4s;margin-top: 50px;
+}
+input[type="submit"]:hover{
+    background: transparent;
+    border: 1px solid indianred;
+    color: #000;
+}
+        </style>
+    </head>
+    <body>
+        <div class="m1">
+            <div class="main">
+                <div class="logo">
+                    <img src="../images/logo.jpg"><a href="#">Shree Pushpalay</a>
+                </div>
+                <ul>
+                    <li class="active"><a href="../Index.html">Home</a></li>
+                    <li><a href="../index.html#Contact">About US</a></li>
+                    <li><a href="../Cart.html">Cart</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="P1-1">
+            <div class="Product">
+                    <img src="../images/pictures(FM)/Ashtar.jpeg">
+                    <div class="P1-1-1-2">
+                        <h2 id="pName">Ashtar</h2>
+                        <p><span style="font-size: 25px;color: rgb(248, 182, 13);">M.R.P.:</span><span style="font-size: 25px;"><span id="price">90</span>/KG.</span></p>
+                    </div>
+                <div class="P1-1-1-3">
+                    <button onclick="addToCart('Ashtar', 90 , '../images/pictures(FM)/Ashtar.jpeg')">
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="buy">
+            <form class="buy1" id="addressForm">  
+                <div class="a">
+                    <b>BUY NOW</b>
+                </div>
+                <div class="b">
+                    <span><h1>Payment Method:</h1><h2>Pay on Delivery (Card/Cash/UPI)</h2></span>
+                </div>
+                <div class="c">
+                    <h1>Quantity:</h1>
+                    <select name="quantity" id="quantity">
+                        <option value="1">1</option>
+                        <option value="1">2</option>
+                        <option value="1">3</option>
+                        <option value="1">4</option>
+                        <option value="1">5</option>
+                        <option value="1">6</option>
+                        <option value="1">7</option>
+                        <option value="1">8</option>
+                        <option value="1">9</option>
+                        <option value="1">10</option>
+                    </select>
+                </div>
+                <div class="d">
+                    <h1>Enter a delivery address: </h1><textarea type="text" name="address" id="address" required></textarea>
+                </div>
+                <div class="e">
+                    <h1>Enter your Phone number: <input type="tel" name="phone" id="phone" required></h1>
+                    <input type="submit" value="Place Order" id="order">
+                </div>
+            </form>
+        </div>
+        <script src="../../database.js"></script>
+    <script>
+          document.addEventListener('DOMContentLoaded', function () {
+              const form = document.getElementById('addressForm');
+          
+              form.addEventListener('submit', function (event) {
+                event.preventDefault();
+          
+                const quantity = document.getElementById('quantity').value;
+                const address = document.getElementById('address').value;
+                const phone = document.getElementById('phone').value;
+                const pName = document.getElementById('pName').innerText;
+                const price = document.getElementById('price').innerText;
+          
+                fetch('http://localhost:6161/addressForm', {
+                  method: 'POST',
+                  headers: {
+                    'Content-Type': 'application/json',
+                  },
+                  body: JSON.stringify({ quantity, address, phone, pName, price}),
+                })
+                .then((response) => response.json())
+                .then((data) => {
+                  if (data.success) {
+                    alert('Sign up successful!');
+                    form.reset(); // Reset the form after successful submission
+                  } else {
+                    alert('Error: ' + data.message);
+                  }
+                })
+                .catch((error) => console.error('Error:', error));
+              });
+            });
+        </script>
+        <script>
+            function addToCart(name, price, imageUrl) {
+            var product = {
+                name: name,
+                price: price,
+                imageUrl: imageUrl
+            };
+            var cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart.push(product);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            window.location.href = '../cart.html';
+        }
+        </script>
+    </body>
+</html>
